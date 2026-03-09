@@ -1,22 +1,22 @@
-import { fn } from '@storybook/test';
-import Task from './Task'
-import { title } from 'process';
+import { fn } from 'storybook/test';
+
+import Task from './Task';
 
 export const ActionsData = {
-  onArchiveTask: fn().
-  onPinTask: fn()
-}
+  onArchiveTask: fn(),
+  onPinTask: fn(),
+};
 
 export default {
-  conponemt: Task,
+  component: Task,
   title: 'Task',
   tags: ['autodocs'],
+  //👇 "Data"로 끝나는 export들은 스토리가 아닙니다.
   excludeStories: /.*Data$/,
   args: {
     ...ActionsData,
   },
-}
-
+};
 
 export const Default = {
   args: {
@@ -45,4 +45,3 @@ export const Archived = {
     },
   },
 };
-
